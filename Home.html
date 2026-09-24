@@ -1,0 +1,639 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Student Management System</h1>
+
+        <p>
+            Manage Student Information and Academic Records
+        </p>
+
+        <hr>
+
+    </header>
+
+
+    <nav>
+
+        <a href="#dashboard">Dashboard</a> |
+        <a href="#add-student">Add Student</a> |
+        <a href="#students">Students</a> |
+        <a href="#search">Search Student</a> |
+        <a href="#statistics">Statistics</a>
+
+    </nav>
+
+    <hr>
+
+
+    <main>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard">
+
+            <h2>Dashboard</h2>
+
+            <table border="1">
+
+                <tr>
+
+                    <th>Total Students</th>
+
+                    <th>Class Average</th>
+
+                    <th>Passed Students</th>
+
+                    <th>Failed Students</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+
+        <!-- ADD STUDENT -->
+
+        <section id="add-student">
+
+            <h2>Add Student</h2>
+
+            <form>
+
+                <fieldset>
+
+                    <legend>Student Information</legend>
+
+                    <p>
+
+                        <label for="name">
+                            Student Name:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        >
+
+                    </p>
+
+
+                    <p>
+
+                        <label for="age">
+                            Age:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            required
+                        >
+
+                    </p>
+
+
+                    <p>
+
+                        <label for="course">
+                            Course:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="course"
+                            name="course"
+                            required
+                        >
+
+                    </p>
+
+                </fieldset>
+
+
+                <br>
+
+
+                <fieldset>
+
+                    <legend>Student Marks</legend>
+
+
+                    <p>
+
+                        <label for="python">
+                            Python:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="python"
+                            name="python"
+                            min="0"
+                            max="100"
+                        >
+
+                    </p>
+
+
+                    <p>
+
+                        <label for="dsa">
+                            Data Structures:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="dsa"
+                            name="dsa"
+                            min="0"
+                            max="100"
+                        >
+
+                    </p>
+
+
+                    <p>
+
+                        <label for="database">
+                            Database:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="database"
+                            name="database"
+                            min="0"
+                            max="100"
+                        >
+
+                    </p>
+
+
+                    <p>
+
+                        <label for="mathematics">
+                            Mathematics:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="mathematics"
+                            name="mathematics"
+                            min="0"
+                            max="100"
+                        >
+
+                    </p>
+
+                </fieldset>
+
+
+                <br>
+
+
+                <input
+                    type="submit"
+                    value="Add Student"
+                >
+
+                <input
+                    type="reset"
+                    value="Clear"
+                >
+
+            </form>
+
+        </section>
+
+        <hr>
+
+
+        <!-- STUDENT LIST -->
+
+        <section id="students">
+
+            <h2>All Students</h2>
+
+
+            <table border="1">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student ID</th>
+
+                        <th>Name</th>
+
+                        <th>Age</th>
+
+                        <th>Course</th>
+
+                        <th>Python</th>
+
+                        <th>Data Structures</th>
+
+                        <th>Database</th>
+
+                        <th>Mathematics</th>
+
+                        <th>Average</th>
+
+                        <th>Grade</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>1</td>
+
+                        <td>Example Student</td>
+
+                        <td>20</td>
+
+                        <td>B.Tech CSE</td>
+
+                        <td>85</td>
+
+                        <td>80</td>
+
+                        <td>90</td>
+
+                        <td>88</td>
+
+                        <td>85.75</td>
+
+                        <td>A</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>2</td>
+
+                        <td>Another Student</td>
+
+                        <td>21</td>
+
+                        <td>B.Tech CSE</td>
+
+                        <td>75</td>
+
+                        <td>82</td>
+
+                        <td>78</td>
+
+                        <td>80</td>
+
+                        <td>78.75</td>
+
+                        <td>B</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+
+        <!-- SEARCH -->
+
+        <section id="search">
+
+            <h2>Search Student</h2>
+
+            <form>
+
+                <p>
+
+                    <label for="search-student">
+                        Student ID or Name:
+                    </label>
+
+                    <input
+                        type="search"
+                        id="search-student"
+                        name="search"
+                    >
+
+                    <input
+                        type="submit"
+                        value="Search"
+                    >
+
+                </p>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+
+        <!-- STUDENT DETAILS -->
+
+        <section>
+
+            <h2>Student Details</h2>
+
+            <article>
+
+                <h3>Student ID: 1</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    Example Student
+                </p>
+
+                <p>
+                    <strong>Age:</strong>
+                    20
+                </p>
+
+                <p>
+                    <strong>Course:</strong>
+                    B.Tech CSE
+                </p>
+
+                <h4>Marks</h4>
+
+                <ul>
+
+                    <li>Python: 85</li>
+
+                    <li>Data Structures: 80</li>
+
+                    <li>Database: 90</li>
+
+                    <li>Mathematics: 88</li>
+
+                </ul>
+
+                <p>
+                    <strong>Average:</strong>
+                    85.75
+                </p>
+
+                <p>
+                    <strong>Grade:</strong>
+                    A
+                </p>
+
+            </article>
+
+        </section>
+
+        <hr>
+
+
+        <!-- STATISTICS -->
+
+        <section id="statistics">
+
+            <h2>Class Statistics</h2>
+
+            <table border="1">
+
+                <tr>
+
+                    <th>Statistic</th>
+
+                    <th>Value</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>Total Students</td>
+
+                    <td>2</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Class Average</td>
+
+                    <td>82.25</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Highest Scorer</td>
+
+                    <td>Example Student</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Lowest Scorer</td>
+
+                    <td>Another Student</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Passed Students</td>
+
+                    <td>2</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Failed Students</td>
+
+                    <td>0</td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+
+        <!-- UPDATE -->
+
+        <section>
+
+            <h2>Update Student</h2>
+
+            <form>
+
+                <p>
+
+                    <label for="update-id">
+                        Student ID:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="update-id"
+                        name="update-id"
+                    >
+
+                </p>
+
+
+                <p>
+
+                    <label for="update-name">
+                        New Name:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="update-name"
+                        name="update-name"
+                    >
+
+                </p>
+
+
+                <p>
+
+                    <label for="update-age">
+                        New Age:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="update-age"
+                        name="update-age"
+                    >
+
+                </p>
+
+
+                <p>
+
+                    <label for="update-course">
+                        New Course:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="update-course"
+                        name="update-course"
+                    >
+
+                </p>
+
+
+                <input
+                    type="submit"
+                    value="Update Student"
+                >
+
+            </form>
+
+        </section>
+
+        <hr>
+
+
+        <!-- DELETE -->
+
+        <section>
+
+            <h2>Delete Student</h2>
+
+            <form>
+
+                <p>
+
+                    <label for="delete-id">
+                        Student ID:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="delete-id"
+                        name="delete-id"
+                    >
+
+                </p>
+
+
+                <input
+                    type="submit"
+                    value="Delete Student"
+                >
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <hr>
+
+
+    <footer>
+
+        <p>
+            Student Management System
+        </p>
+
+        <p>
+            Built using HTML
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
